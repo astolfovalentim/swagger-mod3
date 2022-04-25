@@ -1,13 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 function connectToDatabase() {
-    mongoose.connect('mongodb://localhost:27017/paletas-db', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }).then(() => {
-        console.log('MONGO DB CONECTADO');
-    }).catch((err) => {
-        return console.log(`Erro na conexao com o banco: ${err}`);
+  mongoose
+    .connect(
+      "mongodb+srv://admin:admin@cluster0.q3kr0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
+    .then(() => {
+      console.log("MONGO DB CONECTADO");
+    })
+    .catch((err) => {
+      return console.log(`Erro na conexao com o banco: ${err}`);
     });
 }
 
